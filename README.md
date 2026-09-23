@@ -14,7 +14,7 @@ JDK 17+、Android SDK 35。运行 `./gradlew :app:assembleDebug`，APK 位于 `a
 2. 双击根目录的 **`一键上传到GitHub.cmd`**，按 Git 的提示通过浏览器登录 GitHub。脚本的目标仓库固定为 `https://github.com/3030606794/LuckyTool.git`，不会强制推送。
 3. 上传完成后打开 GitHub 的 **Actions → Build APK**。如工作流没有自动开始，点击 **Run workflow**。编译成功后在该运行记录的 **Artifacts** 下载 APK。
 
-脚本会跳过没有变更的提交；若远端仓库已有不相关的提交或仓库地址不匹配，会停止并显示错误。不要把 GitHub 密码或令牌写入脚本。
+脚本每次会先克隆现有仓库，再把这份源码同步进去，因此解压新版 ZIP 到新文件夹后也能正常更新；没有变更时不会新建提交。若推送时远端发生新的变更，Git 会拒绝覆盖。不要把 GitHub 密码或令牌写入脚本。
 
 ## 使用
 
