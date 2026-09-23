@@ -12,6 +12,10 @@ jobs:
         with:
           distribution: temurin
           java-version: '21'
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v4
+        with:
+          packages: ''
       - name: Check Android SDK
         run: |
           echo "ANDROID_HOME=${ANDROID_HOME:-unset}"
